@@ -1,1 +1,2 @@
-Application part 2 : https://github.com/Nimpoo/Inception-of-things
+# Application deployment.
+It's the `part 3` of this project : https://github.com/Nimpoo/Inception-of-things
