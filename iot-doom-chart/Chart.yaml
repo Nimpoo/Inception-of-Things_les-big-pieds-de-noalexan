@@ -1,0 +1,7 @@
+apiVersion: v2
+name: iot-doom-chart
+description: A Helm chart deploy the Doom game server
+
+type: video-game-server
+version: 0.1.0
+appVersion: "1.0"
