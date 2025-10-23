@@ -2,23 +2,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "iot-doom-chart.fullname" . }}
+  name: {{ include "iot-doom.fullname" . }}
   labels:
-    {{- include "iot-doom-chart.labels" . | nindent 4 }}
-  {{- with .Values.ingress.annotations }}
+    {{- include "iot-doom.labels" . | nindent 4 }}
   annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
+    {{- toYaml .Values.ingress.annotations | nindent 4 }}
 spec:
   rules:
-    - host: {{ .Values.ingress.hosts[0].host | quote }}
+    - host: {{ .Values.ingress.hosts[0].host }}
       http:
         paths:
-          - path: {{ .Values.ingress.hosts[0].paths[0].path | quote }}
+          - path: {{ .Values.ingress.hosts[0].paths[0].path }}
             pathType: {{ .Values.ingress.hosts[0].paths[0].pathType }}
             backend:
               service:
-                name: {{ include "iot-doom-chart.fullname" . }}
+                name: {{ include "iot-doom.fullname" . }}
                 port:
                   number: {{ .Values.service.port }}
 {{- end }}
