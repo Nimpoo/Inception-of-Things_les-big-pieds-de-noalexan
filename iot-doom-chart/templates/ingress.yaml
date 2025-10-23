@@ -5,15 +5,17 @@ metadata:
   name: {{ include "iot-doom-chart.fullname" . }}
   labels:
     {{- include "iot-doom-chart.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
   annotations:
-    {{- toYaml .Values.ingress.annotations | nindent 4 }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   rules:
     - host: {{ .Values.ingress.hosts[0].host | quote }}
       http:
         paths:
           - path: {{ .Values.ingress.hosts[0].paths[0].path | quote }}
-            pathType: {{ .Values.ingress.hosts[0].paths[0].pathType | quote }}
+            pathType: {{ .Values.ingress.hosts[0].paths[0].pathType }}
             backend:
               service:
                 name: {{ include "iot-doom-chart.fullname" . }}
