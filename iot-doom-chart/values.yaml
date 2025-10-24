@@ -10,6 +10,12 @@ service:
   port: 6901
   targetPort: 6901
 
+ingress:
+  enabled: true
+  host: doom.dev.local
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
 env:
   VNC_PW: "password"  # À changer pour un secret en production
 
