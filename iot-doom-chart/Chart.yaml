@@ -1,6 +1,0 @@
-apiVersion: v2
-name: iot-doom-chart
-description: A Helm chart for deploying the Doom game via KasmWeb in a Kubernetes cluster
-type: application
-version: 0.1.0
-appVersion: "v1"
