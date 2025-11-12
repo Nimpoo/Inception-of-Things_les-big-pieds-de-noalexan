@@ -4,7 +4,7 @@ metadata:
   name: doom
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: doom
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: doom
-        image: nimpo/iot-doom:v1
+        image: nimpo/iot-doom:v2
         env:
         - name: VNC_PW
           value: "password"
