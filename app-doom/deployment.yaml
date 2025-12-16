@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: doom
-        image: nimpo/iot-doom:v2
+        image: nimpo/iot-doom:v1
         env:
         - name: VNC_PW
           value: "password"
